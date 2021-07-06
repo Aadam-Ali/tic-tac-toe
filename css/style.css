@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
 body {
   font-family: 'Patrick Hand', cursive;
@@ -32,11 +33,11 @@ header {
   grid-template-columns: repeat(3, 8.75rem); 
   grid-template-rows: repeat(3, 8.75rem);
   justify-content: center;
+  font-family: 'Indie Flower', cursive;
 }
 
 .square {
   border: 0.25rem solid black;
-  justify-content: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -63,6 +64,7 @@ button {
   }
 
   .gameboard {
+    font-size: 8rem;
     grid-template-columns: repeat(3, 6.25rem); 
     grid-template-rows: repeat(3, 6.25rem);
   }
