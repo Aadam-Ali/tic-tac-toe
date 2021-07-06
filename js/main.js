@@ -58,8 +58,8 @@ const displayController = (() => {
 })();
 
 const gameController = (() => {
-  const player1 = new player("x");
-  const player2 = new player("o");
+  const player1 = new player("X");
+  const player2 = new player("O");
   let round = 1;
   let gameOver = false;
 
@@ -79,6 +79,7 @@ const gameController = (() => {
       return;
     }
     round++;
+    displayController.updateMessage(`Player ${currentPlayerSign()}'s Turn`);
   };
 
   const checkForWin = (index) => {
