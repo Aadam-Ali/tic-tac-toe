@@ -26,34 +26,30 @@ const gameBoard = (() => {
 })();
 
 const displayController = (() => {
-  const squares = document.querySelectorAll(".square");
-  const message = document.querySelector(".message");
-  const resetBtn = document.querySelector(".reset");
-
   const updateBoard = () => {
-    for (let i = 0; i < squares.length; i++) {
-      squares[i].textContent = gameBoard.getSquare(i);
-    }
+    $(".square").each(function (i) {
+      $(this).text(gameBoard.getSquare(i));
+    });
   };
 
   const updateMessage = (mes) => {
-    message.textContent = mes;
+    $(".message").text(mes)
   };
 
-  squares.forEach((square) =>
-    square.addEventListener("click", (e) => {
-      if (gameController.isGameOver() || e.target.textContent !== "") return;
-      gameController.playRound(parseInt(e.target.dataset.index));
-      updateBoard();
-    })
-  );
+  $(".square").click(function (e) {
+    if (gameController.isGameOver() || $(this).text() !== "") return;
+    gameController.playRound(parseInt($(this).attr("data-index")));
+    updateBoard();
+  });
 
-  resetBtn.addEventListener("click", (e) => {
+
+  $(".reset").click(function (e) {
     gameBoard.reset();
     gameController.reset();
     updateBoard();
     updateMessage("Player X's Turn");
-  });
+  })
+
   return { updateBoard, updateMessage };
 })();
 
