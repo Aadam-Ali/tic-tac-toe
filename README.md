@@ -19,3 +19,4 @@ To my knowledge there are no bugs in the functionality of the code. However, the
 - HTML
 - CSS
 - JavaScript
+- jQuery
